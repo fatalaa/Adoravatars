@@ -7,6 +7,7 @@ target 'Adoravatars' do
 
   # Pods for Adoravatars
   pod 'Kingfisher', '~> 4.0'
+  pod 'Dip', '~> 6.0'
 
   target 'AdoravatarsTests' do
     inherit! :search_paths

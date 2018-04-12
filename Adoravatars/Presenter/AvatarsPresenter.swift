@@ -55,7 +55,7 @@ class AvatarsPresenter: AvatarsPresenterProtocol {
         avatars = avatarNames.map {
             AvatarModel(name: $0, image: nil, state: .initial)
         }
-        self.imageService.add(listener: self)
+        self.imageService.add(delegate: self)
     }
     
     func didLoad() {
@@ -66,11 +66,11 @@ class AvatarsPresenter: AvatarsPresenterProtocol {
     }
     
     deinit {
-        imageService.remove(listener: self)
+        imageService.remove(delegate: self)
     }
 }
 
-extension AvatarsPresenter: ImageServiceListener {
+extension AvatarsPresenter: ImageServiceDelegate {
     func downloadDidQueue(for url: URL) {
         let avatarName = avatarNameMapper.map(from: url)
         guard let index = avatars.index(where: { $0.name.elementsEqual(avatarName) }) else {

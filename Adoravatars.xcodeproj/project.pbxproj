@@ -19,6 +19,16 @@
 		07639444207A7557009343C7 /* AvatarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0763942B20799D5D009343C7 /* AvatarCell.swift */; };
 		07639445207A756B009343C7 /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076394302079A456009343C7 /* UICollectionView+Extensions.swift */; };
 		07639447207A7989009343C7 /* ImageServiceListenerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07639446207A7989009343C7 /* ImageServiceListenerTests.swift */; };
+		0763944A207EB158009343C7 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07639449207EB158009343C7 /* Navigator.swift */; };
+		0763944C207EB4CE009343C7 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0763944B207EB4CE009343C7 /* BaseViewController.swift */; };
+		0763944D207EB4CE009343C7 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0763944B207EB4CE009343C7 /* BaseViewController.swift */; };
+		077B228A207F8452000D7BFA /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077B2289207F8452000D7BFA /* UITableView+Extensions.swift */; };
+		077B228C207F869B000D7BFA /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077B228B207F869B000D7BFA /* UIViewController+Extensions.swift */; };
+		077B228D207F869B000D7BFA /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077B228B207F869B000D7BFA /* UIViewController+Extensions.swift */; };
+		077B228F207F9879000D7BFA /* DownloadModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077B228E207F9879000D7BFA /* DownloadModel.swift */; };
+		077B2290207F9879000D7BFA /* DownloadModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077B228E207F9879000D7BFA /* DownloadModel.swift */; };
+		077B2292207F9A5C000D7BFA /* DownloadsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077B2291207F9A5C000D7BFA /* DownloadsPresenter.swift */; };
+		077B2293207F9A5C000D7BFA /* DownloadsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077B2291207F9A5C000D7BFA /* DownloadsPresenter.swift */; };
 		077C6FA120795AD20071CE2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077C6FA020795AD20071CE2F /* AppDelegate.swift */; };
 		077C6FA820795AD50071CE2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 077C6FA720795AD50071CE2F /* Assets.xcassets */; };
 		077C6FAB20795AD50071CE2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 077C6FA920795AD50071CE2F /* LaunchScreen.storyboard */; };
@@ -67,6 +77,12 @@
 		0763943F2079BDB8009343C7 /* NSPointerArray+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSPointerArray+Extensions.swift"; sourceTree = "<group>"; };
 		07639442207A734C009343C7 /* AvatarNameMappingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarNameMappingTests.swift; sourceTree = "<group>"; };
 		07639446207A7989009343C7 /* ImageServiceListenerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageServiceListenerTests.swift; sourceTree = "<group>"; };
+		07639449207EB158009343C7 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
+		0763944B207EB4CE009343C7 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		077B2289207F8452000D7BFA /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
+		077B228B207F869B000D7BFA /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		077B228E207F9879000D7BFA /* DownloadModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadModel.swift; sourceTree = "<group>"; };
+		077B2291207F9A5C000D7BFA /* DownloadsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadsPresenter.swift; sourceTree = "<group>"; };
 		077C6F9D20795AD20071CE2F /* Adoravatars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Adoravatars.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		077C6FA020795AD20071CE2F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		077C6FA720795AD50071CE2F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -128,8 +144,18 @@
 			children = (
 				076394302079A456009343C7 /* UICollectionView+Extensions.swift */,
 				0763943F2079BDB8009343C7 /* NSPointerArray+Extensions.swift */,
+				077B2289207F8452000D7BFA /* UITableView+Extensions.swift */,
+				077B228B207F869B000D7BFA /* UIViewController+Extensions.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		07639448207EB13A009343C7 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				07639449207EB158009343C7 /* Navigator.swift */,
+			);
+			path = Navigation;
 			sourceTree = "<group>";
 		};
 		077C6F9420795AD20071CE2F = {
@@ -157,6 +183,7 @@
 		077C6F9F20795AD20071CE2F /* Adoravatars */ = {
 			isa = PBXGroup;
 			children = (
+				07639448207EB13A009343C7 /* Navigation */,
 				0763942F2079A43E009343C7 /* Extension */,
 				077C6FE6207960340071CE2F /* Service */,
 				077C6FD020795C6E0071CE2F /* Model */,
@@ -198,6 +225,7 @@
 				077C6FD720795CBD0071CE2F /* NetworkViewController.swift */,
 				077C6FD820795CBD0071CE2F /* NetworkViewController.xib */,
 				0763942B20799D5D009343C7 /* AvatarCell.swift */,
+				0763944B207EB4CE009343C7 /* BaseViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -206,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				077C6FDD20795E6D0071CE2F /* AvatarsPresenter.swift */,
+				077B2291207F9A5C000D7BFA /* DownloadsPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -215,6 +244,7 @@
 			children = (
 				077C6FE020795EDF0071CE2F /* RequestState.swift */,
 				076394322079A9BB009343C7 /* AvatarModel.swift */,
+				077B228E207F9879000D7BFA /* DownloadModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -262,7 +292,6 @@
 				077C6F9A20795AD20071CE2F /* Frameworks */,
 				077C6F9B20795AD20071CE2F /* Resources */,
 				D7D22E030DB49A975E678B88 /* [CP] Embed Pods Frameworks */,
-				14BC9F2B76FEFCB5D05C9BC9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -281,8 +310,6 @@
 				077C6FAD20795AD50071CE2F /* Sources */,
 				077C6FAE20795AD50071CE2F /* Frameworks */,
 				077C6FAF20795AD50071CE2F /* Resources */,
-				28C414CF03BA26A90B7007DE /* [CP] Embed Pods Frameworks */,
-				556A779C2E65E3E9709DCE5A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -302,8 +329,6 @@
 				077C6FB820795AD50071CE2F /* Sources */,
 				077C6FB920795AD50071CE2F /* Frameworks */,
 				077C6FBA20795AD50071CE2F /* Resources */,
-				8CC3C0F268C5C0C81EFC8968 /* [CP] Embed Pods Frameworks */,
-				19ACB7D0517EC08C64772577 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -406,51 +431,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		14BC9F2B76FEFCB5D05C9BC9 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Adoravatars/Pods-Adoravatars-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		19ACB7D0517EC08C64772577 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AdoravatarsUITests/Pods-AdoravatarsUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		28C414CF03BA26A90B7007DE /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AdoravatarsTests/Pods-AdoravatarsTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		351DF93C1FBB2BBCE3511696 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -467,36 +447,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		556A779C2E65E3E9709DCE5A /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AdoravatarsTests/Pods-AdoravatarsTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8CC3C0F268C5C0C81EFC8968 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AdoravatarsUITests/Pods-AdoravatarsUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A5151DBFDFBCE3F6883A61CB /* [CP] Check Pods Manifest.lock */ = {
@@ -524,10 +474,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Adoravatars/Pods-Adoravatars-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Dip/Dip.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Dip.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -542,15 +494,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				077B228A207F8452000D7BFA /* UITableView+Extensions.swift in Sources */,
+				0763944C207EB4CE009343C7 /* BaseViewController.swift in Sources */,
+				077B2292207F9A5C000D7BFA /* DownloadsPresenter.swift in Sources */,
 				077C6FA120795AD20071CE2F /* AppDelegate.swift in Sources */,
 				077C6FD920795CBD0071CE2F /* NetworkViewController.swift in Sources */,
 				076394332079A9BB009343C7 /* AvatarModel.swift in Sources */,
 				077C6FE120795EDF0071CE2F /* RequestState.swift in Sources */,
+				077B228F207F9879000D7BFA /* DownloadModel.swift in Sources */,
 				0763942D20799D5D009343C7 /* AvatarCell.swift in Sources */,
+				0763944A207EB158009343C7 /* Navigator.swift in Sources */,
 				076394312079A456009343C7 /* UICollectionView+Extensions.swift in Sources */,
 				077C6FD320795CAC0071CE2F /* AvatarsViewController.swift in Sources */,
 				077C6FDE20795E6D0071CE2F /* AvatarsPresenter.swift in Sources */,
 				076394362079ACB0009343C7 /* AppDependencies.swift in Sources */,
+				077B228C207F869B000D7BFA /* UIViewController+Extensions.swift in Sources */,
 				077C6FE82079617D0071CE2F /* ImageService.swift in Sources */,
 				076394402079BDB8009343C7 /* NSPointerArray+Extensions.swift in Sources */,
 			);
@@ -560,12 +518,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0763944D207EB4CE009343C7 /* BaseViewController.swift in Sources */,
 				076394412079BDB8009343C7 /* NSPointerArray+Extensions.swift in Sources */,
 				076394372079ACB0009343C7 /* AppDependencies.swift in Sources */,
 				077C6FDA20795CBD0071CE2F /* NetworkViewController.swift in Sources */,
 				077C6FE220795EDF0071CE2F /* RequestState.swift in Sources */,
 				076394342079A9BB009343C7 /* AvatarModel.swift in Sources */,
+				077B2293207F9A5C000D7BFA /* DownloadsPresenter.swift in Sources */,
 				07639444207A7557009343C7 /* AvatarCell.swift in Sources */,
+				077B2290207F9879000D7BFA /* DownloadModel.swift in Sources */,
+				077B228D207F869B000D7BFA /* UIViewController+Extensions.swift in Sources */,
 				077C6FD420795CAC0071CE2F /* AvatarsViewController.swift in Sources */,
 				07639445207A756B009343C7 /* UICollectionView+Extensions.swift in Sources */,
 				077C6FDF20795E6D0071CE2F /* AvatarsPresenter.swift in Sources */,

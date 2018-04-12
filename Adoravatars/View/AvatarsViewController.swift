@@ -4,15 +4,15 @@ protocol AvatarsView: class {
     func updateItem(at indexPath: IndexPath)
 }
 
-class AvatarsViewController: UIViewController {
+class AvatarsViewController: BaseViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
     let presenter: AvatarsPresenterProtocol
     
-    init(with presenter: AvatarsPresenterProtocol) {
+    init(with presenter: AvatarsPresenterProtocol, navigator: Navigator) {
         self.presenter = presenter
-        super.init(nibName: "AvatarsViewController", bundle: .main)
+        super.init(with: navigator, nibName: "AvatarsViewController", bundle: .main)
         title = "Adoravatars"
     }
     
@@ -28,7 +28,19 @@ class AvatarsViewController: UIViewController {
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.itemSize = CGSize(width: 115, height: 115)
         collectionView.collectionViewLayout = flowLayout
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Network", style: .plain, target: self, action: #selector(networkButtonDidTap))
+        
         presenter.didLoad()
+    }
+    
+    @objc private func networkButtonDidTap() {
+        do {
+            let networkViewController: NetworkViewController = try downloadsScreenContainer.resolve()
+            navigator.present(networkViewController as NetworkViewController, from: self)
+        } catch let error {
+            print(error.localizedDescription)
+        }
     }
 }
 

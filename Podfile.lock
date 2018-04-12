@@ -1,12 +1,20 @@
 PODS:
+  - Dip (6.0)
   - Kingfisher (4.6.3)
 
 DEPENDENCIES:
+  - Dip (~> 6.0)
   - Kingfisher (~> 4.0)
 
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Dip
+    - Kingfisher
+
 SPEC CHECKSUMS:
+  Dip: 316ad036509eaf3ef78e19699f32a9e01a5b3c3e
   Kingfisher: 98e6d5b5e807645743e8ed5ececd25d688d38452
 
-PODFILE CHECKSUM: a5447926f9b0050ce488c8cd87e6a079c4b68d57
+PODFILE CHECKSUM: 63af4a75c1f5fcf65b32fca3a1b2f4c1cb0e78ba
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.0

@@ -1,3 +1,4 @@
+import Dip
 import UIKit
 
 @UIApplicationMain
@@ -5,13 +6,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
+    let rootContainer = DependencyContainer(configBlock: createDependencies)
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
         window = UIWindow(frame: UIScreen.main.bounds)
-        if let window = self.window {
-            createDependencies(with: window)
-        }
+        let rootViewController: AvatarsViewController = try! rootContainer.resolve()
+        window?.rootViewController = rootViewController.embeddedInNavigationController
+        window?.makeKeyAndVisible()
         return true
     }
 

@@ -1,12 +1,12 @@
 import Kingfisher
 
 protocol ImageServiceProtocol {
-    func add(listener: ImageServiceListener)
-    func remove(listener: ImageServiceListener)
+    func add(delegate: ImageServiceDelegate)
+    func remove(delegate: ImageServiceDelegate)
     func download(image url: URL)
 }
 
-protocol ImageServiceListener: class {
+protocol ImageServiceDelegate: class {
     func downloadDidQueue(for url: URL)
     func downloadDidStart(for url: URL)
     func downloadDidFinish(for url: URL, error: NSError?, image: Image?)
@@ -25,25 +25,25 @@ class ImageService: ImageServiceProtocol {
     
     fileprivate let downloader: ImageDownloader
     fileprivate let cache: ImageCache
-    fileprivate var listeners: NSPointerArray = NSPointerArray.weakObjects()
+    fileprivate var delegates: NSPointerArray = NSPointerArray.weakObjects()
     fileprivate let downloadOptions: KingfisherOptionsInfo
     
-    func add(listener: ImageServiceListener) {
-        listeners.add(object: listener)
+    func add(delegate: ImageServiceDelegate) {
+        delegates.add(object: delegate)
     }
     
-    func remove(listener: ImageServiceListener) {
-        listeners.remove(object: listener)
+    func remove(delegate: ImageServiceDelegate) {
+        delegates.remove(object: delegate)
     }
     
     func download(image url: URL) {
         statusMap[url] = .queued(Date())
-        listeners.compact()
-        for index in 0..<listeners.count {
-            guard let listener = listeners.object(at: index) as? ImageServiceListener else {
+        delegates.compact()
+        for index in 0..<delegates.count {
+            guard let delegate = delegates.object(at: index) as? ImageServiceDelegate else {
                 continue
             }
-            listener.downloadDidQueue(for: url)
+            delegate.downloadDidQueue(for: url)
         }
         downloader.downloadImage(with: url, options: downloadOptions) { [weak self] (image, error, url, data) in
             guard let strongSelf = self, let url = url else {
@@ -54,12 +54,12 @@ class ImageService: ImageServiceProtocol {
             } else {
                 strongSelf.statusMap[url] = .failed(Date())
             }
-            strongSelf.listeners.compact()
-            for index in 0..<strongSelf.listeners.count {
-                guard let listener = strongSelf.listeners.object(at: index) as? ImageServiceListener else {
+            strongSelf.delegates.compact()
+            for index in 0..<strongSelf.delegates.count {
+                guard let delegate = strongSelf.delegates.object(at: index) as? ImageServiceDelegate else {
                     continue
                 }
-                listener.downloadDidFinish(for: url, error: error, image: image)
+                delegate.downloadDidFinish(for: url, error: error, image: image)
             }
         }
     }
@@ -68,12 +68,12 @@ class ImageService: ImageServiceProtocol {
 extension ImageService: ImageDownloaderDelegate {
     func imageDownloader(_ downloader: ImageDownloader, willDownloadImageForURL url: URL, with request: URLRequest?) {
         statusMap[url] = .inProgress(Date())
-        listeners.compact()
-        for index in 0..<listeners.count {
-            guard let listener = listeners.object(at: index) as? ImageServiceListener else {
+        delegates.compact()
+        for index in 0..<delegates.count {
+            guard let delegate = delegates.object(at: index) as? ImageServiceDelegate else {
                 continue
             }
-            listener.downloadDidStart(for: url)
+            delegate.downloadDidStart(for: url)
         }
     }
 }
