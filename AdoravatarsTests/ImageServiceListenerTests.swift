@@ -7,7 +7,7 @@ class ImageServiceListenerTests: XCTestCase {
     func testListenerInvocations() {
         let listener = ImageServiceListenerMock()
         let imageService = ImageServiceMock()
-        imageService.add(listener: listener)
+        imageService.add(delegate: listener)
         XCTAssert(listener.downloadDidQueueInvokedCount == 0)
         XCTAssert(listener.downloadDidStartInvokedCount == 0)
         XCTAssert(listener.downloadDidFinishInvokedCount == 0)
@@ -24,14 +24,14 @@ class ImageServiceListenerTests: XCTestCase {
 
 class ImageServiceMock: ImageServiceProtocol {
     
-    var listeners: [ImageServiceListener] = []
+    var listeners: [ImageServiceDelegate] = []
     
-    func add(listener: ImageServiceListener) {
-        listeners.append(listener)
+    func add(delegate: ImageServiceDelegate) {
+        listeners.append(delegate)
     }
     
-    func remove(listener: ImageServiceListener) {
-        if let index = listeners.index(where: { $0 === listener }) {
+    func remove(delegate: ImageServiceDelegate) {
+        if let index = listeners.index(where: { $0 === delegate }) {
             listeners.remove(at: index)
         }
     }
@@ -49,7 +49,7 @@ class ImageServiceMock: ImageServiceProtocol {
     }
 }
 
-class ImageServiceListenerMock: ImageServiceListener {
+class ImageServiceListenerMock: ImageServiceDelegate {
     
     var downloadDidQueueInvokedCount = 0
     var downloadDidStartInvokedCount = 0

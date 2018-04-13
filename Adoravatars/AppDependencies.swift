@@ -25,7 +25,7 @@ func createDependencies(to container: DependencyContainer) {
     }
     container.register(.singleton) {
         Navigator()
-    }
+    }.implements(Navigation.self)
 
     avatarScreenContainer.register(.singleton) {
         AvatarsPresenter(with: $0, avatarNameMapper: $1, avatarNames: $2) as AvatarsPresenterProtocol

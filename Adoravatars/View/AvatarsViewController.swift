@@ -30,14 +30,12 @@ class AvatarsViewController: BaseViewController {
         collectionView.collectionViewLayout = flowLayout
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Network", style: .plain, target: self, action: #selector(networkButtonDidTap))
-        
-        presenter.didLoad()
     }
     
     @objc private func networkButtonDidTap() {
         do {
             let networkViewController: NetworkViewController = try downloadsScreenContainer.resolve()
-            navigator.present(networkViewController as NetworkViewController, from: self)
+            navigator.present(networkViewController, from: self)
         } catch let error {
             print(error.localizedDescription)
         }
@@ -71,6 +69,7 @@ extension AvatarsViewController: UICollectionViewDelegateFlowLayout {
             return
         }
         let model = presenter.avatars[indexPath.item]
+        presenter.loadNextImage(for: indexPath)
         cell.bind(to: model)
     }
 }

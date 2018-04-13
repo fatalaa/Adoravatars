@@ -47,6 +47,8 @@
 		077C6FE220795EDF0071CE2F /* RequestState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077C6FE020795EDF0071CE2F /* RequestState.swift */; };
 		077C6FE82079617D0071CE2F /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077C6FE72079617D0071CE2F /* ImageService.swift */; };
 		077C6FE92079617D0071CE2F /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077C6FE72079617D0071CE2F /* ImageService.swift */; };
+		07AF71D42080DCA400E96199 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07639449207EB158009343C7 /* Navigator.swift */; };
+		07AF71D52080DCB700E96199 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077B2289207F8452000D7BFA /* UITableView+Extensions.swift */; };
 		0E47880BAF55F9FAD2E9BAA4 /* Pods_Adoravatars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1239275469A525DF2DB42C9 /* Pods_Adoravatars.framework */; };
 		E654962670BFCEA6141E2F23 /* Pods_AdoravatarsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E7D0C59951FEFAAC44730EF /* Pods_AdoravatarsTests.framework */; };
 		F262524C741739F024B919E7 /* Pods_AdoravatarsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27187AA7A20BD4FF1F44D31C /* Pods_AdoravatarsUITests.framework */; };
@@ -192,6 +194,7 @@
 				077C6FA020795AD20071CE2F /* AppDelegate.swift */,
 				077C6FA720795AD50071CE2F /* Assets.xcassets */,
 				077C6FA920795AD50071CE2F /* LaunchScreen.storyboard */,
+				0763944B207EB4CE009343C7 /* BaseViewController.swift */,
 				077C6FAC20795AD50071CE2F /* Info.plist */,
 				076394352079ACB0009343C7 /* AppDependencies.swift */,
 			);
@@ -225,7 +228,6 @@
 				077C6FD720795CBD0071CE2F /* NetworkViewController.swift */,
 				077C6FD820795CBD0071CE2F /* NetworkViewController.xib */,
 				0763942B20799D5D009343C7 /* AvatarCell.swift */,
-				0763944B207EB4CE009343C7 /* BaseViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -519,6 +521,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0763944D207EB4CE009343C7 /* BaseViewController.swift in Sources */,
+				07AF71D42080DCA400E96199 /* Navigator.swift in Sources */,
 				076394412079BDB8009343C7 /* NSPointerArray+Extensions.swift in Sources */,
 				076394372079ACB0009343C7 /* AppDependencies.swift in Sources */,
 				077C6FDA20795CBD0071CE2F /* NetworkViewController.swift in Sources */,
@@ -526,6 +529,7 @@
 				076394342079A9BB009343C7 /* AvatarModel.swift in Sources */,
 				077B2293207F9A5C000D7BFA /* DownloadsPresenter.swift in Sources */,
 				07639444207A7557009343C7 /* AvatarCell.swift in Sources */,
+				07AF71D52080DCB700E96199 /* UITableView+Extensions.swift in Sources */,
 				077B2290207F9879000D7BFA /* DownloadModel.swift in Sources */,
 				077B228D207F869B000D7BFA /* UIViewController+Extensions.swift in Sources */,
 				077C6FD420795CAC0071CE2F /* AvatarsViewController.swift in Sources */,

@@ -37,7 +37,7 @@ struct AvatarNameMapper: AvatarNameMapping {
 
 protocol AvatarsPresenterProtocol {
     var avatars: [AvatarModel] { get }
-    func didLoad()
+    func loadNextImage(for indexPath: IndexPath)
 }
 
 class AvatarsPresenter: AvatarsPresenterProtocol {
@@ -58,11 +58,13 @@ class AvatarsPresenter: AvatarsPresenterProtocol {
         self.imageService.add(delegate: self)
     }
     
-    func didLoad() {
-        avatars.forEach {
-            let url = avatarNameMapper.map(from: $0.name)
-            imageService.download(image: url)
+    func loadNextImage(for indexPath: IndexPath) {
+        let avatarModel = avatars[indexPath.item]
+        guard avatarModel.image == nil && !avatarModel.isQueued else {
+            return
         }
+        let url = avatarNameMapper.map(from: avatarModel.name)
+        imageService.download(image: url)
     }
     
     deinit {
